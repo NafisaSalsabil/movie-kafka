@@ -1,0 +1,29 @@
+test_four_checks_quarantine_and_conservation (test_quality.QualityTest) ... skipped 'requires the project Spark container'
+test_benchmark_and_batch_reload (test_serving.ServingTest) ... [QUALITY] stage=database-movies in=3 out=3 failed=0
+[QUALITY] stage=database-movie_stats in=3 out=3 failed=0
+[QUALITY] stage=database-genre_year in=3 out=3 failed=0
+ok
+test_empty_stream (test_serving.ServingTest) ... [QUALITY] stage=database-movies in=3 out=3 failed=0
+[QUALITY] stage=database-movie_stats in=3 out=3 failed=0
+[QUALITY] stage=database-genre_year in=3 out=3 failed=0
+ok
+test_failed_sink_rolls_back_ledger_and_rows (test_serving.ServingTest) ... [QUALITY] stage=database-movies in=3 out=3 failed=0
+[QUALITY] stage=database-movie_stats in=3 out=3 failed=0
+[QUALITY] stage=database-genre_year in=3 out=3 failed=0
+ok
+test_questions_threshold_ties_latest_event_hour (test_serving.ServingTest) ... [QUALITY] stage=database-movies in=3 out=3 failed=0
+[QUALITY] stage=database-movie_stats in=3 out=3 failed=0
+[QUALITY] stage=database-genre_year in=3 out=3 failed=0
+[QUALITY] stage=database-hourly-0 in=2 out=2 failed=0
+ok
+test_replay_and_absolute_updates (test_serving.ServingTest) ... [QUALITY] stage=database-movies in=3 out=3 failed=0
+[QUALITY] stage=database-movie_stats in=3 out=3 failed=0
+[QUALITY] stage=database-genre_year in=3 out=3 failed=0
+[QUALITY] stage=database-hourly-0 in=1 out=1 failed=0
+[QUALITY] stage=database-hourly-1 in=1 out=1 failed=0
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.600s
+
+OK (skipped=1)

@@ -1,0 +1,116 @@
+{
+  "method": "Isolated SQLite backup snapshot; one warmup then 30 execute+fetch trials per question, unindexed then indexed; primary keys retained. Sequential order and OS cache are limitations.",
+  "cardinalities": {
+    "movies": 87585,
+    "movie_stats": 26505,
+    "genre_year": 541,
+    "hourly_counts": 994006
+  },
+  "snapshot_stream_ratings": 1000000,
+  "python": "3.11.18",
+  "sqlite": "3.40.1",
+  "results": {
+    "False": {
+      "1": {
+        "median_ms": 4.65365,
+        "min_ms": 3.502,
+        "max_ms": 11.1474,
+        "n": 30
+      },
+      "2": {
+        "median_ms": 6.4156,
+        "min_ms": 4.7115,
+        "max_ms": 10.6346,
+        "n": 30
+      },
+      "3": {
+        "median_ms": 0.27925,
+        "min_ms": 0.1642,
+        "max_ms": 0.9248,
+        "n": 30
+      }
+    },
+    "True": {
+      "1": {
+        "median_ms": 0.35355,
+        "min_ms": 0.177,
+        "max_ms": 15.6121,
+        "n": 30
+      },
+      "2": {
+        "median_ms": 1.1470500000000001,
+        "min_ms": 0.6899,
+        "max_ms": 13.0872,
+        "n": 30
+      },
+      "3": {
+        "median_ms": 0.376,
+        "min_ms": 0.1747,
+        "max_ms": 1.457,
+        "n": 30
+      }
+    }
+  },
+  "indexed_plans": {
+    "1": [
+      [
+        6,
+        0,
+        0,
+        "SCAN s USING INDEX idx_movie_ranking"
+      ],
+      [
+        9,
+        0,
+        0,
+        "SEARCH m USING INTEGER PRIMARY KEY (rowid=?)"
+      ]
+    ],
+    "2": [
+      [
+        4,
+        0,
+        0,
+        "SCAN g USING INDEX sqlite_autoindex_genre_year_1"
+      ],
+      [
+        9,
+        0,
+        0,
+        "CORRELATED SCALAR SUBQUERY 1"
+      ],
+      [
+        14,
+        9,
+        0,
+        "SEARCH g2 USING COVERING INDEX idx_genre_ranking (year=?)"
+      ]
+    ],
+    "3": [
+      [
+        6,
+        0,
+        0,
+        "SEARCH h USING INDEX idx_hour_ranking (hour_start=?)"
+      ],
+      [
+        9,
+        0,
+        0,
+        "SCALAR SUBQUERY 1"
+      ],
+      [
+        14,
+        9,
+        0,
+        "SEARCH hourly_counts USING COVERING INDEX sqlite_autoindex_hourly_counts_1"
+      ],
+      [
+        30,
+        0,
+        0,
+        "SEARCH m USING INTEGER PRIMARY KEY (rowid=?)"
+      ]
+    ]
+  }
+}

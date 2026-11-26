@@ -1,0 +1,10 @@
+{
+  "query_id": "ee35b90b-da64-41cf-8579-150050d78cd9",
+  "input_events": 1000007,
+  "dropped_by_watermark": 7,
+  "latest_watermark": "2023-10-12T22:19:15.000Z",
+  "retained_state_keys": 2,
+  "default_late_events": 5,
+  "recovery_probes": 2,
+  "completed_restarts": 2
+}

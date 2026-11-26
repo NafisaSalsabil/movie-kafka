@@ -1,0 +1,7 @@
+# Evidence run only: avoid an unrelated service occupying host port 9092.
+services:
+  kafka:
+    ports: !override
+      - "19092:9092"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:19092

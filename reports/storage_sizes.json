@@ -1,0 +1,13 @@
+{
+  "movies": {
+    "rows": 87585,
+    "csv_bytes": 4155340,
+    "parquet_bytes": 2232510
+  },
+  "ratings": {
+    "rows_in": 1000000,
+    "rows_out": 1000000,
+    "csv_bytes": 24776884,
+    "parquet_bytes": 8202028
+  }
+}

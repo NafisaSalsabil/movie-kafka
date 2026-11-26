@@ -1,2 +1,17 @@
 
 Video Project CPS853 checkpoint.mp4
+
+data/
+checkpoints/
+late_state/
+late_ratings/
+reports/event_watermark.json
+reports/event_watermark.json.tmp
+bad_ratings*/
+bad_ratings_producer.jsonl
+stream_hourly_counts/
+reports/*.log
+
+__pycache__/
+*.pyc
+recording-runtime/

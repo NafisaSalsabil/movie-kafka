@@ -1,0 +1,78 @@
+batch-1  | Setting default log level to "WARN".
+batch-1  | To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+batch-1  | 26/11/23 17:04:15 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+batch-1  | 
+batch-1  | --- PART 1 ROW COUNT CHECK ---
+batch-1  | Movies rows: 87,585
+batch-1  | Ratings rows: 1,000,000
+batch-1  | Total rows processed: 1,087,585
+batch-1  | Part 1 processes at least 1,000,000 rows.
+batch-1  | movie.csv file size: 3.962841033935547 MB
+batch-1  | ratings.csv file size: 23.629077911376953 MB
+batch-1  | 
+batch-1  | --- PART 4 QUALITY (batch) ---
+batch-1  | [QUALITY] check=missing failed=0
+batch-1  | [QUALITY] check=range failed=0
+batch-1  | [QUALITY] check=ids failed=0
+batch-1  | [QUALITY] check=duplicates failed=0
+batch-1  | [QUALITY] stage=batch-csv in=1,000,000 out=1,000,000 failed=0
+batch-1  | 
+batch-1  | --- PARQUET ROW COUNT CHECK ---
+batch-1  | Total Parquet rows: 1,087,585
+batch-1  | [QUALITY] stage=batch-parquet in=1,000,000 out=1,000,000 failed=0
+batch-1  | movies_parquet file size: 2.127696990966797 MB
+batch-1  | ratings_parquet file size: 6.699223518371582 MB
+batch-1  | [QUALITY] stage=movies-parquet in=87,585 out=87,585 failed=0
+batch-1  | ten highest-rated movies with at least 1,000 ratings:
+batch-1  | +-------+---------------------------------------------------------------------------+------------------+------------+
+batch-1  | |movieId|title                                                                      |avg_rating        |rating_count|
+batch-1  | +-------+---------------------------------------------------------------------------+------------------+------------+
+batch-1  | |318    |Shawshank Redemption, The (1994)                                           |4.421060470658326 |3357        |
+batch-1  | |858    |Godfather, The (1972)                                                      |4.308679421371909 |2143        |
+batch-1  | |50     |Usual Suspects, The (1995)                                                 |4.300227272727272 |2200        |
+batch-1  | |1221   |Godfather: Part II, The (1974)                                             |4.267078488372093 |1376        |
+batch-1  | |527    |Schindler's List (1993)                                                    |4.253753753753754 |2331        |
+batch-1  | |2959   |Fight Club (1999)                                                          |4.253141467369274 |2467        |
+batch-1  | |750    |Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)|4.247373447946514 |1047        |
+batch-1  | |5618   |Spirited Away (Sen to Chihiro no kamikakushi) (2001)                       |4.2278942570647216|1097        |
+batch-1  | |296    |Pulp Fiction (1994)                                                        |4.22446445203353  |3221        |
+batch-1  | |1193   |One Flew Over the Cuckoo's Nest (1975)                                     |4.214438884917798 |1399        |
+batch-1  | +-------+---------------------------------------------------------------------------+------------------+------------+
+batch-1  | 
+batch-1  | genre received the most ratings in each year:
+batch-1  | +----+-----+------------+
+batch-1  | |year|genre|rating_count|
+batch-1  | +----+-----+------------+
+batch-1  | |1996|Drama|21051       |
+batch-1  | |1997|Drama|9694        |
+batch-1  | |1998|Drama|4364        |
+batch-1  | |1999|Drama|17772       |
+batch-1  | |2000|Drama|28509       |
+batch-1  | |2001|Drama|14988       |
+batch-1  | |2002|Drama|12141       |
+batch-1  | |2003|Drama|14877       |
+batch-1  | |2004|Drama|14365       |
+batch-1  | |2005|Drama|23743       |
+batch-1  | |2006|Drama|13608       |
+batch-1  | |2007|Drama|12389       |
+batch-1  | |2008|Drama|14291       |
+batch-1  | |2009|Drama|13089       |
+batch-1  | |2010|Drama|12262       |
+batch-1  | |2011|Drama|10777       |
+batch-1  | |2012|Drama|9087        |
+batch-1  | |2013|Drama|8338        |
+batch-1  | |2014|Drama|8327        |
+batch-1  | |2015|Drama|24728       |
+batch-1  | |2016|Drama|25549       |
+batch-1  | |2017|Drama|23720       |
+batch-1  | |2018|Drama|16801       |
+batch-1  | |2019|Drama|15379       |
+batch-1  | |2020|Drama|21304       |
+batch-1  | |2021|Drama|16524       |
+batch-1  | |2022|Drama|14684       |
+batch-1  | |2023|Drama|13287       |
+batch-1  | +----+-----+------------+
+batch-1  | 
+batch-1  | [QUALITY] stage=database-movies in=87585 out=87585 failed=0
+batch-1  | [QUALITY] stage=database-movie_stats in=26505 out=26505 failed=0
+batch-1  | [QUALITY] stage=database-genre_year in=541 out=541 failed=0

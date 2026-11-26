@@ -1,8 +1,8 @@
 """
-Deep-dive check: batch hourly counts vs stream_hourly_counts/.
+Deep-dive check: batch hourly counts vs SQLite hourly_counts.
 
 Uses the same slice as the producer (year range + earliest N rows).
-Late injects are duplicates beyond the watermark, so stream hourly totals
+Late injects are older test events beyond the watermark, so stream hourly totals
 should match this batch baseline. late_ratings/ is reported separately.
 """
 
@@ -14,14 +14,14 @@ from pyspark.sql.functions import col, count, from_unixtime, sum as spark_sum, w
 from pyspark.sql.types import TimestampType
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--start-year", type=int, default=1995)
-parser.add_argument("--end-year", type=int, default=1996)
+parser.add_argument("--start-year", type=int, default=1996)
+parser.add_argument("--end-year", type=int, default=2023)
 parser.add_argument("--max-messages", type=int, default=100)
 args = parser.parse_args()
 
 spark = (
     SparkSession.builder.appName("DeepDiveCompare")
-    .master("local[*]")
+    .master("local[2]")
     .config("spark.sql.session.timeZone", "UTC")
     # Tolerate overwrite races if the stream consumer is still running
     .config("spark.sql.files.ignoreMissingFiles", "true")
@@ -47,17 +47,13 @@ batch = (
     )
 )
 
-if not os.path.isdir("stream_hourly_counts"):
-    raise SystemExit("stream_hourly_counts/ missing — run the stream consumer first")
-
-stream = (
-    spark.read.parquet("stream_hourly_counts")
-    # Partition cols may be strings on read; align types with the batch side
-    .withColumn("hour_start", col("hour_start").cast("timestamp"))
-    .withColumn("movieId", col("movieId").cast("long"))
-    .groupBy("hour_start", "movieId")
-    .agg(spark_sum("rating_count").alias("stream_count"))
-)
+from database import connect
+with connect() as db:
+    stored = [tuple(r) for r in db.execute("SELECT hour_start,movie_id,rating_count FROM hourly_counts")]
+if not stored:
+    raise SystemExit("No hourly results in database; run the consumer first")
+stream = (spark.createDataFrame(stored, "hour_start string, movieId long, stream_count long")
+          .withColumn("hour_start", col("hour_start").cast("timestamp")))
 
 batch = batch.withColumn("hour_start", col("hour_start").cast("timestamp")).withColumn(
     "movieId", col("movieId").cast("long")
@@ -88,4 +84,6 @@ if os.path.isdir("late_ratings"):
     late_n = spark.read.json("late_ratings").count()
 print(f"Late ratings logged: {late_n}", flush=True)
 
+failed = mismatches.count() > 0 or extra_stream.count() > 0
 spark.stop()
+raise SystemExit(1 if failed else 0)

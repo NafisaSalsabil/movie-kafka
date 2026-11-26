@@ -1,0 +1,6 @@
+NAME                       IMAGE                    COMMAND                  SERVICE    CREATED          STATUS                      PORTS
+movie-reviews-batch-1      movie-reviews-batch      "python3 -u starter.…"   batch      29 minutes ago   Exited (0) 24 minutes ago   
+movie-reviews-consumer-1   movie-reviews-consumer   "python3 -u consumer…"   consumer   19 minutes ago   Up About a minute           
+movie-reviews-kafka-1      apache/kafka:3.8.0       "/__cacert_entrypoin…"   kafka      25 minutes ago   Up 25 minutes (healthy)     0.0.0.0:19092->9092/tcp, [::]:19092->9092/tcp
+movie-reviews-producer-1   movie-reviews-producer   "python3 -u producer…"   producer   28 minutes ago   Exited (0) 13 minutes ago   
+movie-reviews-serve-1      movie-reviews-serve      "python3 -u serve.py"    serve      19 minutes ago   Up 19 minutes (healthy)     127.0.0.1:8000->8000/tcp

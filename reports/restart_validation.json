@@ -1,0 +1,597 @@
+{
+  "target_restarts": 2,
+  "method": "Two consumer SIGKILL/restarts after source replay, preserving the latest still-open event-time hour. One explicitly recorded beyond-watermark recovery probe after each restart demonstrates resumed Kafka consumption; source counts must stay unchanged. Producer activity and before/after Spark state/watermark progress are recorded.",
+  "restarts": [
+    {
+      "restart": 1,
+      "before": {
+        "rating_total": 1000000,
+        "committed_batches": 3,
+        "progress_events": 4,
+        "last_progress": {
+          "id": "ee35b90b-da64-41cf-8579-150050d78cd9",
+          "runId": "bfd4d00b-ce24-49b7-979f-e5bc3cc8b14e",
+          "name": "hourly",
+          "timestamp": "2026-11-23T17:22:09.869Z",
+          "batchId": 3,
+          "numInputRows": 5,
+          "inputRowsPerSecond": 0.03218290186789562,
+          "processedRowsPerSecond": 0.253151739152448,
+          "durationMs": {
+            "addBatch": 18304,
+            "commitOffsets": 442,
+            "getBatch": 0,
+            "latestOffset": 25,
+            "queryPlanning": 574,
+            "triggerExecution": 19750,
+            "walCommit": 339
+          },
+          "eventTime": {
+            "avg": "1996-02-27T07:14:37.000Z",
+            "max": "1996-02-27T07:14:37.000Z",
+            "min": "1996-02-27T07:14:37.000Z",
+            "watermark": "2023-10-12T22:19:15.000Z"
+          },
+          "stateOperators": [
+            {
+              "operatorName": "stateStoreSave",
+              "numRowsTotal": 2,
+              "numRowsUpdated": 0,
+              "allUpdatesTimeMs": 283,
+              "numRowsRemoved": 387915,
+              "allRemovalsTimeMs": 4495,
+              "commitTimeMs": 1778,
+              "memoryUsedBytes": 78932672,
+              "numRowsDroppedByWatermark": 5,
+              "numShufflePartitions": 4,
+              "numStateStoreInstances": 4,
+              "customMetrics": {
+                "loadedMapCacheHitCount": 24,
+                "loadedMapCacheMissCount": 0,
+                "stateOnCurrentVersionSizeBytes": 8389056
+              }
+            }
+          ],
+          "sources": [
+            {
+              "description": "KafkaV2[Subscribe[ratings]]",
+              "startOffset": {
+                "ratings": {
+                  "0": 1000000
+                }
+              },
+              "endOffset": {
+                "ratings": {
+                  "0": 1000005
+                }
+              },
+              "latestOffset": {
+                "ratings": {
+                  "0": 1000005
+                }
+              },
+              "numInputRows": 5,
+              "inputRowsPerSecond": 0.03218290186789562,
+              "processedRowsPerSecond": 0.253151739152448,
+              "metrics": {
+                "avgOffsetsBehindLatest": "0.0",
+                "maxOffsetsBehindLatest": "0",
+                "minOffsetsBehindLatest": "0"
+              }
+            }
+          ],
+          "sink": {
+            "description": "ForeachBatchSink",
+            "numOutputRows": -1
+          }
+        }
+      },
+      "producer_running": false,
+      "signal": "SIGKILL",
+      "after": {
+        "rating_total": 1000000,
+        "committed_batches": 3,
+        "progress_events": 5,
+        "last_progress": {
+          "id": "ee35b90b-da64-41cf-8579-150050d78cd9",
+          "runId": "a58ad2a4-6578-4c7e-a11a-ea840102ebd3",
+          "name": "hourly",
+          "timestamp": "2026-11-23T17:30:24.092Z",
+          "batchId": 4,
+          "numInputRows": 1,
+          "inputRowsPerSecond": 45.45454545454546,
+          "processedRowsPerSecond": 0.04734624307561195,
+          "durationMs": {
+            "addBatch": 18026,
+            "commitOffsets": 348,
+            "getBatch": 0,
+            "latestOffset": 122,
+            "queryPlanning": 1724,
+            "triggerExecution": 21121,
+            "walCommit": 852
+          },
+          "eventTime": {
+            "avg": "1999-12-02T19:24:37.000Z",
+            "max": "1999-12-02T19:24:37.000Z",
+            "min": "1999-12-02T19:24:37.000Z",
+            "watermark": "2023-10-12T22:19:15.000Z"
+          },
+          "stateOperators": [
+            {
+              "operatorName": "stateStoreSave",
+              "numRowsTotal": 2,
+              "numRowsUpdated": 0,
+              "allUpdatesTimeMs": 333,
+              "numRowsRemoved": 0,
+              "allRemovalsTimeMs": 30,
+              "commitTimeMs": 1558,
+              "memoryUsedBytes": 4196480,
+              "numRowsDroppedByWatermark": 1,
+              "numShufflePartitions": 4,
+              "numStateStoreInstances": 4,
+              "customMetrics": {
+                "loadedMapCacheHitCount": 4,
+                "loadedMapCacheMissCount": 4,
+                "stateOnCurrentVersionSizeBytes": 896
+              }
+            }
+          ],
+          "sources": [
+            {
+              "description": "KafkaV2[Subscribe[ratings]]",
+              "startOffset": {
+                "ratings": {
+                  "0": 1000005
+                }
+              },
+              "endOffset": {
+                "ratings": {
+                  "0": 1000006
+                }
+              },
+              "latestOffset": {
+                "ratings": {
+                  "0": 1000006
+                }
+              },
+              "numInputRows": 1,
+              "inputRowsPerSecond": 45.45454545454546,
+              "processedRowsPerSecond": 0.04734624307561195,
+              "metrics": {
+                "avgOffsetsBehindLatest": "0.0",
+                "maxOffsetsBehindLatest": "0",
+                "minOffsetsBehindLatest": "0"
+              }
+            }
+          ],
+          "sink": {
+            "description": "ForeachBatchSink",
+            "numOutputRows": -1
+          }
+        }
+      }
+    },
+    {
+      "restart": 2,
+      "before": {
+        "rating_total": 1000000,
+        "committed_batches": 3,
+        "progress_events": 5,
+        "last_progress": {
+          "id": "ee35b90b-da64-41cf-8579-150050d78cd9",
+          "runId": "a58ad2a4-6578-4c7e-a11a-ea840102ebd3",
+          "name": "hourly",
+          "timestamp": "2026-11-23T17:30:24.092Z",
+          "batchId": 4,
+          "numInputRows": 1,
+          "inputRowsPerSecond": 45.45454545454546,
+          "processedRowsPerSecond": 0.04734624307561195,
+          "durationMs": {
+            "addBatch": 18026,
+            "commitOffsets": 348,
+            "getBatch": 0,
+            "latestOffset": 122,
+            "queryPlanning": 1724,
+            "triggerExecution": 21121,
+            "walCommit": 852
+          },
+          "eventTime": {
+            "avg": "1999-12-02T19:24:37.000Z",
+            "max": "1999-12-02T19:24:37.000Z",
+            "min": "1999-12-02T19:24:37.000Z",
+            "watermark": "2023-10-12T22:19:15.000Z"
+          },
+          "stateOperators": [
+            {
+              "operatorName": "stateStoreSave",
+              "numRowsTotal": 2,
+              "numRowsUpdated": 0,
+              "allUpdatesTimeMs": 333,
+              "numRowsRemoved": 0,
+              "allRemovalsTimeMs": 30,
+              "commitTimeMs": 1558,
+              "memoryUsedBytes": 4196480,
+              "numRowsDroppedByWatermark": 1,
+              "numShufflePartitions": 4,
+              "numStateStoreInstances": 4,
+              "customMetrics": {
+                "loadedMapCacheHitCount": 4,
+                "loadedMapCacheMissCount": 4,
+                "stateOnCurrentVersionSizeBytes": 896
+              }
+            }
+          ],
+          "sources": [
+            {
+              "description": "KafkaV2[Subscribe[ratings]]",
+              "startOffset": {
+                "ratings": {
+                  "0": 1000005
+                }
+              },
+              "endOffset": {
+                "ratings": {
+                  "0": 1000006
+                }
+              },
+              "latestOffset": {
+                "ratings": {
+                  "0": 1000006
+                }
+              },
+              "numInputRows": 1,
+              "inputRowsPerSecond": 45.45454545454546,
+              "processedRowsPerSecond": 0.04734624307561195,
+              "metrics": {
+                "avgOffsetsBehindLatest": "0.0",
+                "maxOffsetsBehindLatest": "0",
+                "minOffsetsBehindLatest": "0"
+              }
+            }
+          ],
+          "sink": {
+            "description": "ForeachBatchSink",
+            "numOutputRows": -1
+          }
+        }
+      },
+      "producer_running": false,
+      "signal": "SIGKILL",
+      "after": {
+        "rating_total": 1000000,
+        "committed_batches": 3,
+        "progress_events": 6,
+        "last_progress": {
+          "id": "ee35b90b-da64-41cf-8579-150050d78cd9",
+          "runId": "604960d0-2c4c-499e-ae01-a0084e1fb110",
+          "name": "hourly",
+          "timestamp": "2026-11-23T17:31:22.264Z",
+          "batchId": 5,
+          "numInputRows": 1,
+          "inputRowsPerSecond": 0.0,
+          "processedRowsPerSecond": 0.021974158389733673,
+          "durationMs": {
+            "addBatch": 38503,
+            "commitOffsets": 1669,
+            "getBatch": 2,
+            "latestOffset": 3344,
+            "queryPlanning": 1165,
+            "triggerExecution": 45508,
+            "walCommit": 633
+          },
+          "eventTime": {
+            "avg": "1999-12-02T19:24:36.000Z",
+            "max": "1999-12-02T19:24:36.000Z",
+            "min": "1999-12-02T19:24:36.000Z",
+            "watermark": "2023-10-12T22:19:15.000Z"
+          },
+          "stateOperators": [
+            {
+              "operatorName": "stateStoreSave",
+              "numRowsTotal": 2,
+              "numRowsUpdated": 0,
+              "allUpdatesTimeMs": 506,
+              "numRowsRemoved": 0,
+              "allRemovalsTimeMs": 30,
+              "commitTimeMs": 3059,
+              "memoryUsedBytes": 4196480,
+              "numRowsDroppedByWatermark": 1,
+              "numShufflePartitions": 4,
+              "numStateStoreInstances": 4,
+              "customMetrics": {
+                "loadedMapCacheHitCount": 4,
+                "loadedMapCacheMissCount": 4,
+                "stateOnCurrentVersionSizeBytes": 896
+              }
+            }
+          ],
+          "sources": [
+            {
+              "description": "KafkaV2[Subscribe[ratings]]",
+              "startOffset": {
+                "ratings": {
+                  "0": 1000006
+                }
+              },
+              "endOffset": {
+                "ratings": {
+                  "0": 1000007
+                }
+              },
+              "latestOffset": {
+                "ratings": {
+                  "0": 1000007
+                }
+              },
+              "numInputRows": 1,
+              "inputRowsPerSecond": 0.0,
+              "processedRowsPerSecond": 0.021974158389733673,
+              "metrics": {
+                "avgOffsetsBehindLatest": "0.0",
+                "maxOffsetsBehindLatest": "0",
+                "minOffsetsBehindLatest": "0"
+              }
+            }
+          ],
+          "sink": {
+            "description": "ForeachBatchSink",
+            "numOutputRows": -1
+          }
+        }
+      }
+    }
+  ],
+  "recovery_probe_file": "reports/recovery_probes.json",
+  "post_restart_csv_verification": {
+    "csv_ratings": 1000000,
+    "stream_rating_total": 1000000,
+    "checks": {
+      "q1": true,
+      "q2": true,
+      "q3": true,
+      "stream_total": true,
+      "all_hourly_keys": true
+    },
+    "hourly_keys_compared": 994006,
+    "answers": [
+      {
+        "question": 1,
+        "elapsed_ms": 67.8461,
+        "indexed": true,
+        "status": "ready",
+        "rows": [
+          {
+            "movie_id": 318,
+            "title": "Shawshank Redemption, The (1994)",
+            "avg_rating": 4.421060470658326,
+            "rating_count": 3357
+          },
+          {
+            "movie_id": 858,
+            "title": "Godfather, The (1972)",
+            "avg_rating": 4.308679421371909,
+            "rating_count": 2143
+          },
+          {
+            "movie_id": 50,
+            "title": "Usual Suspects, The (1995)",
+            "avg_rating": 4.300227272727272,
+            "rating_count": 2200
+          },
+          {
+            "movie_id": 1221,
+            "title": "Godfather: Part II, The (1974)",
+            "avg_rating": 4.267078488372093,
+            "rating_count": 1376
+          },
+          {
+            "movie_id": 527,
+            "title": "Schindler's List (1993)",
+            "avg_rating": 4.253753753753754,
+            "rating_count": 2331
+          },
+          {
+            "movie_id": 2959,
+            "title": "Fight Club (1999)",
+            "avg_rating": 4.253141467369274,
+            "rating_count": 2467
+          },
+          {
+            "movie_id": 750,
+            "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)",
+            "avg_rating": 4.247373447946514,
+            "rating_count": 1047
+          },
+          {
+            "movie_id": 5618,
+            "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+            "avg_rating": 4.2278942570647216,
+            "rating_count": 1097
+          },
+          {
+            "movie_id": 296,
+            "title": "Pulp Fiction (1994)",
+            "avg_rating": 4.22446445203353,
+            "rating_count": 3221
+          },
+          {
+            "movie_id": 1193,
+            "title": "One Flew Over the Cuckoo's Nest (1975)",
+            "avg_rating": 4.214438884917798,
+            "rating_count": 1399
+          }
+        ]
+      },
+      {
+        "question": 2,
+        "elapsed_ms": 9.2777,
+        "indexed": true,
+        "status": "ready",
+        "rows": [
+          {
+            "year": 1996,
+            "genre": "Drama",
+            "rating_count": 21051
+          },
+          {
+            "year": 1997,
+            "genre": "Drama",
+            "rating_count": 9694
+          },
+          {
+            "year": 1998,
+            "genre": "Drama",
+            "rating_count": 4364
+          },
+          {
+            "year": 1999,
+            "genre": "Drama",
+            "rating_count": 17772
+          },
+          {
+            "year": 2000,
+            "genre": "Drama",
+            "rating_count": 28509
+          },
+          {
+            "year": 2001,
+            "genre": "Drama",
+            "rating_count": 14988
+          },
+          {
+            "year": 2002,
+            "genre": "Drama",
+            "rating_count": 12141
+          },
+          {
+            "year": 2003,
+            "genre": "Drama",
+            "rating_count": 14877
+          },
+          {
+            "year": 2004,
+            "genre": "Drama",
+            "rating_count": 14365
+          },
+          {
+            "year": 2005,
+            "genre": "Drama",
+            "rating_count": 23743
+          },
+          {
+            "year": 2006,
+            "genre": "Drama",
+            "rating_count": 13608
+          },
+          {
+            "year": 2007,
+            "genre": "Drama",
+            "rating_count": 12389
+          },
+          {
+            "year": 2008,
+            "genre": "Drama",
+            "rating_count": 14291
+          },
+          {
+            "year": 2009,
+            "genre": "Drama",
+            "rating_count": 13089
+          },
+          {
+            "year": 2010,
+            "genre": "Drama",
+            "rating_count": 12262
+          },
+          {
+            "year": 2011,
+            "genre": "Drama",
+            "rating_count": 10777
+          },
+          {
+            "year": 2012,
+            "genre": "Drama",
+            "rating_count": 9087
+          },
+          {
+            "year": 2013,
+            "genre": "Drama",
+            "rating_count": 8338
+          },
+          {
+            "year": 2014,
+            "genre": "Drama",
+            "rating_count": 8327
+          },
+          {
+            "year": 2015,
+            "genre": "Drama",
+            "rating_count": 24728
+          },
+          {
+            "year": 2016,
+            "genre": "Drama",
+            "rating_count": 25549
+          },
+          {
+            "year": 2017,
+            "genre": "Drama",
+            "rating_count": 23720
+          },
+          {
+            "year": 2018,
+            "genre": "Drama",
+            "rating_count": 16801
+          },
+          {
+            "year": 2019,
+            "genre": "Drama",
+            "rating_count": 15379
+          },
+          {
+            "year": 2020,
+            "genre": "Drama",
+            "rating_count": 21304
+          },
+          {
+            "year": 2021,
+            "genre": "Drama",
+            "rating_count": 16524
+          },
+          {
+            "year": 2022,
+            "genre": "Drama",
+            "rating_count": 14684
+          },
+          {
+            "year": 2023,
+            "genre": "Drama",
+            "rating_count": 13287
+          }
+        ]
+      },
+      {
+        "question": 3,
+        "elapsed_ms": 1.6623,
+        "indexed": true,
+        "status": "ready",
+        "rows": [
+          {
+            "hour_start": "2023-10-12 22:00:00",
+            "hour_end": "2023-10-12 23:00:00",
+            "movie_id": 212309,
+            "title": "The Neighbors' Window (2019)",
+            "rating_count": 1
+          },
+          {
+            "hour_start": "2023-10-12 22:00:00",
+            "hour_end": "2023-10-12 23:00:00",
+            "movie_id": 243434,
+            "title": "The Letter Room (2020)",
+            "rating_count": 1
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,225 @@
+[
+  {
+    "question": 1,
+    "elapsed_ms": 10.9467,
+    "indexed": true,
+    "status": "ready",
+    "rows": [
+      {
+        "movie_id": 318,
+        "title": "Shawshank Redemption, The (1994)",
+        "avg_rating": 4.421060470658326,
+        "rating_count": 3357
+      },
+      {
+        "movie_id": 858,
+        "title": "Godfather, The (1972)",
+        "avg_rating": 4.308679421371909,
+        "rating_count": 2143
+      },
+      {
+        "movie_id": 50,
+        "title": "Usual Suspects, The (1995)",
+        "avg_rating": 4.300227272727272,
+        "rating_count": 2200
+      },
+      {
+        "movie_id": 1221,
+        "title": "Godfather: Part II, The (1974)",
+        "avg_rating": 4.267078488372093,
+        "rating_count": 1376
+      },
+      {
+        "movie_id": 527,
+        "title": "Schindler's List (1993)",
+        "avg_rating": 4.253753753753754,
+        "rating_count": 2331
+      },
+      {
+        "movie_id": 2959,
+        "title": "Fight Club (1999)",
+        "avg_rating": 4.253141467369274,
+        "rating_count": 2467
+      },
+      {
+        "movie_id": 750,
+        "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)",
+        "avg_rating": 4.247373447946514,
+        "rating_count": 1047
+      },
+      {
+        "movie_id": 5618,
+        "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+        "avg_rating": 4.2278942570647216,
+        "rating_count": 1097
+      },
+      {
+        "movie_id": 296,
+        "title": "Pulp Fiction (1994)",
+        "avg_rating": 4.22446445203353,
+        "rating_count": 3221
+      },
+      {
+        "movie_id": 1193,
+        "title": "One Flew Over the Cuckoo's Nest (1975)",
+        "avg_rating": 4.214438884917798,
+        "rating_count": 1399
+      }
+    ]
+  },
+  {
+    "question": 2,
+    "elapsed_ms": 40.5149,
+    "indexed": true,
+    "status": "ready",
+    "rows": [
+      {
+        "year": 1996,
+        "genre": "Drama",
+        "rating_count": 21051
+      },
+      {
+        "year": 1997,
+        "genre": "Drama",
+        "rating_count": 9694
+      },
+      {
+        "year": 1998,
+        "genre": "Drama",
+        "rating_count": 4364
+      },
+      {
+        "year": 1999,
+        "genre": "Drama",
+        "rating_count": 17772
+      },
+      {
+        "year": 2000,
+        "genre": "Drama",
+        "rating_count": 28509
+      },
+      {
+        "year": 2001,
+        "genre": "Drama",
+        "rating_count": 14988
+      },
+      {
+        "year": 2002,
+        "genre": "Drama",
+        "rating_count": 12141
+      },
+      {
+        "year": 2003,
+        "genre": "Drama",
+        "rating_count": 14877
+      },
+      {
+        "year": 2004,
+        "genre": "Drama",
+        "rating_count": 14365
+      },
+      {
+        "year": 2005,
+        "genre": "Drama",
+        "rating_count": 23743
+      },
+      {
+        "year": 2006,
+        "genre": "Drama",
+        "rating_count": 13608
+      },
+      {
+        "year": 2007,
+        "genre": "Drama",
+        "rating_count": 12389
+      },
+      {
+        "year": 2008,
+        "genre": "Drama",
+        "rating_count": 14291
+      },
+      {
+        "year": 2009,
+        "genre": "Drama",
+        "rating_count": 13089
+      },
+      {
+        "year": 2010,
+        "genre": "Drama",
+        "rating_count": 12262
+      },
+      {
+        "year": 2011,
+        "genre": "Drama",
+        "rating_count": 10777
+      },
+      {
+        "year": 2012,
+        "genre": "Drama",
+        "rating_count": 9087
+      },
+      {
+        "year": 2013,
+        "genre": "Drama",
+        "rating_count": 8338
+      },
+      {
+        "year": 2014,
+        "genre": "Drama",
+        "rating_count": 8327
+      },
+      {
+        "year": 2015,
+        "genre": "Drama",
+        "rating_count": 24728
+      },
+      {
+        "year": 2016,
+        "genre": "Drama",
+        "rating_count": 25549
+      },
+      {
+        "year": 2017,
+        "genre": "Drama",
+        "rating_count": 23720
+      },
+      {
+        "year": 2018,
+        "genre": "Drama",
+        "rating_count": 16801
+      },
+      {
+        "year": 2019,
+        "genre": "Drama",
+        "rating_count": 15379
+      },
+      {
+        "year": 2020,
+        "genre": "Drama",
+        "rating_count": 21304
+      },
+      {
+        "year": 2021,
+        "genre": "Drama",
+        "rating_count": 16524
+      },
+      {
+        "year": 2022,
+        "genre": "Drama",
+        "rating_count": 14684
+      },
+      {
+        "year": 2023,
+        "genre": "Drama",
+        "rating_count": 13287
+      }
+    ]
+  },
+  {
+    "question": 3,
+    "elapsed_ms": 0.9367,
+    "indexed": true,
+    "status": "no_results_yet",
+    "rows": []
+  }
+]

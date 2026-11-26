@@ -1,0 +1,560 @@
+{
+  "database_integrity": "ok",
+  "rows": {
+    "rows_in": 1000005,
+    "valid_rows": 1000005,
+    "quality_failed": 0,
+    "within_grace": 1000000,
+    "quarantined_late": 5,
+    "late_event_rows": 5,
+    "watermark_epoch": 1697149755,
+    "samples": [
+      {
+        "source_partition": 0,
+        "source_offset": 1000004,
+        "event_timestamp": 825405277,
+        "window_start": 825404400,
+        "window_end": 825408000,
+        "watermark_at_arrival": 1697149755,
+        "late_seconds": 871741755,
+        "row": {
+          "userId": 1326,
+          "movieId": 2,
+          "rating": 5.0,
+          "timestamp": 825405277
+        }
+      },
+      {
+        "source_partition": 0,
+        "source_offset": 1000003,
+        "event_timestamp": 825405277,
+        "window_start": 825404400,
+        "window_end": 825408000,
+        "watermark_at_arrival": 1697149755,
+        "late_seconds": 871741755,
+        "row": {
+          "userId": 1326,
+          "movieId": 86,
+          "rating": 3.0,
+          "timestamp": 825405277
+        }
+      },
+      {
+        "source_partition": 0,
+        "source_offset": 1000002,
+        "event_timestamp": 825405277,
+        "window_start": 825404400,
+        "window_end": 825408000,
+        "watermark_at_arrival": 1697149755,
+        "late_seconds": 871741755,
+        "row": {
+          "userId": 1326,
+          "movieId": 93,
+          "rating": 2.0,
+          "timestamp": 825405277
+        }
+      },
+      {
+        "source_partition": 0,
+        "source_offset": 1000001,
+        "event_timestamp": 825405277,
+        "window_start": 825404400,
+        "window_end": 825408000,
+        "watermark_at_arrival": 1697149755,
+        "late_seconds": 871741755,
+        "row": {
+          "userId": 1326,
+          "movieId": 79,
+          "rating": 5.0,
+          "timestamp": 825405277
+        }
+      },
+      {
+        "source_partition": 0,
+        "source_offset": 1000000,
+        "event_timestamp": 825405277,
+        "window_start": 825404400,
+        "window_end": 825408000,
+        "watermark_at_arrival": 1697149755,
+        "late_seconds": 871741755,
+        "row": {
+          "userId": 1326,
+          "movieId": 6,
+          "rating": 4.0,
+          "timestamp": 825405277
+        }
+      }
+    ],
+    "conservation_ok": true
+  },
+  "late_rows": [
+    {
+      "source_partition": 0,
+      "source_offset": 1000000,
+      "batch_id": 10,
+      "user_id": 1326,
+      "movie_id": 6,
+      "rating": 4.0,
+      "event_timestamp": 825405277,
+      "window_start": 825404400,
+      "window_end": 825408000,
+      "watermark_at_arrival": 1697149755,
+      "late_seconds": 871741755,
+      "row": {
+        "userId": 1326,
+        "movieId": 6,
+        "rating": 4.0,
+        "timestamp": 825405277
+      }
+    },
+    {
+      "source_partition": 0,
+      "source_offset": 1000001,
+      "batch_id": 10,
+      "user_id": 1326,
+      "movie_id": 79,
+      "rating": 5.0,
+      "event_timestamp": 825405277,
+      "window_start": 825404400,
+      "window_end": 825408000,
+      "watermark_at_arrival": 1697149755,
+      "late_seconds": 871741755,
+      "row": {
+        "userId": 1326,
+        "movieId": 79,
+        "rating": 5.0,
+        "timestamp": 825405277
+      }
+    },
+    {
+      "source_partition": 0,
+      "source_offset": 1000002,
+      "batch_id": 10,
+      "user_id": 1326,
+      "movie_id": 93,
+      "rating": 2.0,
+      "event_timestamp": 825405277,
+      "window_start": 825404400,
+      "window_end": 825408000,
+      "watermark_at_arrival": 1697149755,
+      "late_seconds": 871741755,
+      "row": {
+        "userId": 1326,
+        "movieId": 93,
+        "rating": 2.0,
+        "timestamp": 825405277
+      }
+    },
+    {
+      "source_partition": 0,
+      "source_offset": 1000003,
+      "batch_id": 10,
+      "user_id": 1326,
+      "movie_id": 86,
+      "rating": 3.0,
+      "event_timestamp": 825405277,
+      "window_start": 825404400,
+      "window_end": 825408000,
+      "watermark_at_arrival": 1697149755,
+      "late_seconds": 871741755,
+      "row": {
+        "userId": 1326,
+        "movieId": 86,
+        "rating": 3.0,
+        "timestamp": 825405277
+      }
+    },
+    {
+      "source_partition": 0,
+      "source_offset": 1000004,
+      "batch_id": 10,
+      "user_id": 1326,
+      "movie_id": 2,
+      "rating": 5.0,
+      "event_timestamp": 825405277,
+      "window_start": 825404400,
+      "window_end": 825408000,
+      "watermark_at_arrival": 1697149755,
+      "late_seconds": 871741755,
+      "row": {
+        "userId": 1326,
+        "movieId": 2,
+        "rating": 5.0,
+        "timestamp": 825405277
+      }
+    }
+  ],
+  "stream_batches": [
+    {
+      "batch_id": 0,
+      "rows_in": 100000,
+      "valid_rows": 100000,
+      "quality_failed": 0,
+      "within_grace": 100000,
+      "late_rows": 0,
+      "max_event_time": 942072788,
+      "watermark": 942072488
+    },
+    {
+      "batch_id": 1,
+      "rows_in": 100000,
+      "valid_rows": 100000,
+      "quality_failed": 0,
+      "within_grace": 100000,
+      "late_rows": 0,
+      "max_event_time": 993060957,
+      "watermark": 993060657
+    },
+    {
+      "batch_id": 2,
+      "rows_in": 100000,
+      "valid_rows": 100000,
+      "quality_failed": 0,
+      "within_grace": 100000,
+      "late_rows": 0,
+      "max_event_time": 1092616094,
+      "watermark": 1092615794
+    },
+    {
+      "batch_id": 3,
+      "rows_in": 100000,
+      "valid_rows": 100000,
+      "quality_failed": 0,
+      "within_grace": 100000,
+      "late_rows": 0,
+      "max_event_time": 1167304267,
+      "watermark": 1167303967
+    },
+    {
+      "batch_id": 4,
+      "rows_in": 100000,
+      "valid_rows": 100000,
+      "quality_failed": 0,
+      "within_grace": 100000,
+      "late_rows": 0,
+      "max_event_time": 1270195033,
+      "watermark": 1270194733
+    },
+    {
+      "batch_id": 5,
+      "rows_in": 100000,
+      "valid_rows": 100000,
+      "quality_failed": 0,
+      "within_grace": 100000,
+      "late_rows": 0,
+      "max_event_time": 1422126898,
+      "watermark": 1422126598
+    },
+    {
+      "batch_id": 6,
+      "rows_in": 100000,
+      "valid_rows": 100000,
+      "quality_failed": 0,
+      "within_grace": 100000,
+      "late_rows": 0,
+      "max_event_time": 1475435746,
+      "watermark": 1475435446
+    },
+    {
+      "batch_id": 7,
+      "rows_in": 100000,
+      "valid_rows": 100000,
+      "quality_failed": 0,
+      "within_grace": 100000,
+      "late_rows": 0,
+      "max_event_time": 1536801822,
+      "watermark": 1536801522
+    },
+    {
+      "batch_id": 8,
+      "rows_in": 100000,
+      "valid_rows": 100000,
+      "quality_failed": 0,
+      "within_grace": 100000,
+      "late_rows": 0,
+      "max_event_time": 1609841578,
+      "watermark": 1609841278
+    },
+    {
+      "batch_id": 9,
+      "rows_in": 100000,
+      "valid_rows": 100000,
+      "quality_failed": 0,
+      "within_grace": 100000,
+      "late_rows": 0,
+      "max_event_time": 1697150055,
+      "watermark": 1697149755
+    },
+    {
+      "batch_id": 10,
+      "rows_in": 5,
+      "valid_rows": 5,
+      "quality_failed": 0,
+      "within_grace": 0,
+      "late_rows": 5,
+      "max_event_time": 1697150055,
+      "watermark": 1697149755
+    }
+  ],
+  "batch_conservation_ok": true,
+  "csv_oracle": {
+    "csv_ratings": 1000000,
+    "stream_rating_total": 1000000,
+    "checks": {
+      "q1": true,
+      "q2": true,
+      "q3": true,
+      "stream_total": true,
+      "all_hourly_keys": true
+    },
+    "hourly_keys_compared": 994006,
+    "answers": [
+      {
+        "question": 1,
+        "sql": "SELECT s.movie_id, m.title, s.avg_rating, s.rating_count\n      FROM movie_stats s JOIN movies m USING(movie_id)\n      WHERE s.rating_count >= 1000 ORDER BY s.avg_rating DESC, s.movie_id LIMIT 10",
+        "elapsed_ms": 16.9002,
+        "indexed": true,
+        "status": "ready",
+        "rows": [
+          {
+            "movie_id": 318,
+            "title": "Shawshank Redemption, The (1994)",
+            "avg_rating": 4.421060470658326,
+            "rating_count": 3357
+          },
+          {
+            "movie_id": 858,
+            "title": "Godfather, The (1972)",
+            "avg_rating": 4.308679421371909,
+            "rating_count": 2143
+          },
+          {
+            "movie_id": 50,
+            "title": "Usual Suspects, The (1995)",
+            "avg_rating": 4.300227272727272,
+            "rating_count": 2200
+          },
+          {
+            "movie_id": 1221,
+            "title": "Godfather: Part II, The (1974)",
+            "avg_rating": 4.267078488372093,
+            "rating_count": 1376
+          },
+          {
+            "movie_id": 527,
+            "title": "Schindler's List (1993)",
+            "avg_rating": 4.253753753753754,
+            "rating_count": 2331
+          },
+          {
+            "movie_id": 2959,
+            "title": "Fight Club (1999)",
+            "avg_rating": 4.253141467369274,
+            "rating_count": 2467
+          },
+          {
+            "movie_id": 750,
+            "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)",
+            "avg_rating": 4.247373447946514,
+            "rating_count": 1047
+          },
+          {
+            "movie_id": 5618,
+            "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+            "avg_rating": 4.2278942570647216,
+            "rating_count": 1097
+          },
+          {
+            "movie_id": 296,
+            "title": "Pulp Fiction (1994)",
+            "avg_rating": 4.22446445203353,
+            "rating_count": 3221
+          },
+          {
+            "movie_id": 1193,
+            "title": "One Flew Over the Cuckoo's Nest (1975)",
+            "avg_rating": 4.214438884917798,
+            "rating_count": 1399
+          }
+        ]
+      },
+      {
+        "question": 2,
+        "sql": "SELECT year, genre, rating_count FROM genre_year g\n      WHERE rating_count=(SELECT MAX(g2.rating_count) FROM genre_year g2 WHERE g2.year=g.year)\n      ORDER BY year, genre",
+        "elapsed_ms": 1.7018,
+        "indexed": true,
+        "status": "ready",
+        "rows": [
+          {
+            "year": 1996,
+            "genre": "Drama",
+            "rating_count": 21051
+          },
+          {
+            "year": 1997,
+            "genre": "Drama",
+            "rating_count": 9694
+          },
+          {
+            "year": 1998,
+            "genre": "Drama",
+            "rating_count": 4364
+          },
+          {
+            "year": 1999,
+            "genre": "Drama",
+            "rating_count": 17772
+          },
+          {
+            "year": 2000,
+            "genre": "Drama",
+            "rating_count": 28509
+          },
+          {
+            "year": 2001,
+            "genre": "Drama",
+            "rating_count": 14988
+          },
+          {
+            "year": 2002,
+            "genre": "Drama",
+            "rating_count": 12141
+          },
+          {
+            "year": 2003,
+            "genre": "Drama",
+            "rating_count": 14877
+          },
+          {
+            "year": 2004,
+            "genre": "Drama",
+            "rating_count": 14365
+          },
+          {
+            "year": 2005,
+            "genre": "Drama",
+            "rating_count": 23743
+          },
+          {
+            "year": 2006,
+            "genre": "Drama",
+            "rating_count": 13608
+          },
+          {
+            "year": 2007,
+            "genre": "Drama",
+            "rating_count": 12389
+          },
+          {
+            "year": 2008,
+            "genre": "Drama",
+            "rating_count": 14291
+          },
+          {
+            "year": 2009,
+            "genre": "Drama",
+            "rating_count": 13089
+          },
+          {
+            "year": 2010,
+            "genre": "Drama",
+            "rating_count": 12262
+          },
+          {
+            "year": 2011,
+            "genre": "Drama",
+            "rating_count": 10777
+          },
+          {
+            "year": 2012,
+            "genre": "Drama",
+            "rating_count": 9087
+          },
+          {
+            "year": 2013,
+            "genre": "Drama",
+            "rating_count": 8338
+          },
+          {
+            "year": 2014,
+            "genre": "Drama",
+            "rating_count": 8327
+          },
+          {
+            "year": 2015,
+            "genre": "Drama",
+            "rating_count": 24728
+          },
+          {
+            "year": 2016,
+            "genre": "Drama",
+            "rating_count": 25549
+          },
+          {
+            "year": 2017,
+            "genre": "Drama",
+            "rating_count": 23720
+          },
+          {
+            "year": 2018,
+            "genre": "Drama",
+            "rating_count": 16801
+          },
+          {
+            "year": 2019,
+            "genre": "Drama",
+            "rating_count": 15379
+          },
+          {
+            "year": 2020,
+            "genre": "Drama",
+            "rating_count": 21304
+          },
+          {
+            "year": 2021,
+            "genre": "Drama",
+            "rating_count": 16524
+          },
+          {
+            "year": 2022,
+            "genre": "Drama",
+            "rating_count": 14684
+          },
+          {
+            "year": 2023,
+            "genre": "Drama",
+            "rating_count": 13287
+          }
+        ]
+      },
+      {
+        "question": 3,
+        "sql": "SELECT h.hour_start, h.hour_end, h.movie_id, m.title, h.rating_count\n      FROM hourly_counts h JOIN movies m USING(movie_id)\n      WHERE h.hour_start=(SELECT MAX(hour_start) FROM hourly_counts)\n      ORDER BY h.rating_count DESC,h.movie_id LIMIT 10",
+        "elapsed_ms": 0.5139,
+        "indexed": true,
+        "status": "ready",
+        "rows": [
+          {
+            "hour_start": "2023-10-12 22:00:00",
+            "hour_end": "2023-10-12 23:00:00",
+            "movie_id": 212309,
+            "title": "The Neighbors' Window (2019)",
+            "rating_count": 1
+          },
+          {
+            "hour_start": "2023-10-12 22:00:00",
+            "hour_end": "2023-10-12 23:00:00",
+            "movie_id": 243434,
+            "title": "The Letter Room (2020)",
+            "rating_count": 1
+          }
+        ]
+      }
+    ]
+  },
+  "answer_timings_ms": {
+    "1": 16.9002,
+    "2": 1.7018,
+    "3": 0.5139
+  }
+}

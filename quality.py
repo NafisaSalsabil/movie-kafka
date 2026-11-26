@@ -10,6 +10,8 @@ Four checks (each reports how many rows failed):
 Bad rows are quarantined (not dropped silently). Alert if fail rate > 1%.
 """
 
+import math
+
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
@@ -48,43 +50,47 @@ def check_ratings_spark(df):
         | (F.col("timestamp") <= 0)
     )
 
+    # Prefer a valid row when an invalid row shares its duplicate key.
+    base_bad = (null_cond | F.coalesce(range_cond, F.lit(False))
+                | F.coalesce(id_cond, F.lit(False)))
     w = Window.partitionBy("userId", "movieId", "timestamp").orderBy(
-        F.monotonically_increasing_id()
+        base_bad.cast("int"), F.monotonically_increasing_id()
     )
     ranked = df.withColumn("_rn", F.row_number().over(w))
     dup_cond = F.col("_rn") > 1
-
-    fails = {
-        "missing": df.filter(null_cond).count(),
-        "range": df.filter(range_cond).count(),
-        "ids": df.filter(id_cond).count(),
-        "duplicates": ranked.filter(dup_cond).count(),
-    }
+    conditions = {"missing": null_cond, "range": range_cond,
+                  "ids": id_cond, "duplicates": dup_cond}
+    counts = ranked.agg(*[
+        F.sum(F.when(condition, 1).otherwise(0)).alias(name)
+        for name, condition in conditions.items()
+    ]).first()
+    fails = {name: int(counts[name] or 0) for name in conditions}
     for name, n in fails.items():
         print(f"[QUALITY] check={name} failed={n:,}", flush=True)
 
-    bad_cond = null_cond | range_cond | id_cond | dup_cond
+    bad_cond = null_cond | F.coalesce(range_cond, F.lit(False)) | F.coalesce(id_cond, F.lit(False)) | dup_cond
     bad = ranked.filter(bad_cond).drop("_rn")
     good = ranked.filter(~bad_cond).drop("_rn")
     return good, bad, fails
 
 
-def row_failures(row, seen):
-    """Producer-side checks on one dict. Returns list of failed check names."""
+def row_failures(row, seen=None):
+    """Validate a producer dict without crashing on malformed numeric values."""
     failed = []
-    if (
-        row.get("userId") is None
-        or row.get("movieId") is None
-        or row.get("rating") is None
-        or row.get("timestamp") is None
-    ):
+    required = ("userId", "movieId", "rating", "timestamp")
+    if any(row.get(key) is None for key in required):
         failed.append("missing")
-    else:
-        if not (0.5 <= float(row["rating"]) <= 5.0):
-            failed.append("range")
-        if int(row["userId"]) <= 0 or int(row["movieId"]) <= 0 or int(row["timestamp"]) <= 0:
-            failed.append("ids")
-        key = (row["userId"], row["movieId"], row["timestamp"])
+    value = row.get("rating")
+    if value is not None and (
+        type(value) not in (int, float) or not math.isfinite(value)
+        or not 0.5 <= value <= 5.0
+    ):
+        failed.append("range")
+    ids = [row.get(key) for key in ("userId", "movieId", "timestamp")]
+    if any(value is not None and (type(value) is not int or value <= 0) for value in ids):
+        failed.append("ids")
+    if seen is not None and not failed:
+        key = tuple(ids)
         if key in seen:
             failed.append("duplicates")
         else:

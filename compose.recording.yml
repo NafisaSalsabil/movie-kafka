@@ -1,0 +1,28 @@
+# A separate project, database, Kafka volume and generated files for rehearsal.
+# Use through demo.py, which supplies isolated project name and host ports.
+x-recording: &recording
+  working_dir: /recording
+  environment:
+    PYTHONPATH: /app
+  volumes:
+    - ./recording-runtime:/recording
+    - ./ratings.csv:/recording/ratings.csv:ro
+    - ./movies.csv:/recording/movies.csv:ro
+
+services:
+  batch:
+    <<: *recording
+    command: [python3, -u, /app/starter.py]
+  consumer:
+    <<: *recording
+    command: [python3, -u, /app/consumer.py]
+    environment:
+      PYTHONPATH: /app
+      MAX_OFFSETS_PER_TRIGGER: "50000"
+  producer:
+    <<: *recording
+    command: [python3, -u, /app/producer.py, --start-year, "1996", --end-year, "2023", --rate-per-second, "3500", --progress-every, "10000", --inject-late, "5"]
+  serve:
+    <<: *recording
+    command: [python3, -u, /app/serve.py]
+    depends_on: !override {}

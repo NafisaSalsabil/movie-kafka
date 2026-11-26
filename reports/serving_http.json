@@ -1,0 +1,22 @@
+{
+  "http_status": "all_three_ready",
+  "integrity_check": "ok",
+  "stream_total": 1000000,
+  "responses": [
+    {
+      "question": 1,
+      "elapsed_ms": 25.7238,
+      "rows": 10
+    },
+    {
+      "question": 2,
+      "elapsed_ms": 1.1326,
+      "rows": 28
+    },
+    {
+      "question": 3,
+      "elapsed_ms": 0.7605,
+      "rows": 2
+    }
+  ]
+}

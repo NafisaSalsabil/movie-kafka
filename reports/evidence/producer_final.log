@@ -1,0 +1,60 @@
+producer-1  | Year 1996: 49,110 ratings
+producer-1  | Year 1997: 23,070 ratings
+producer-1  | Year 1998: 9,714 ratings
+producer-1  | Year 1999: 38,568 ratings
+producer-1  | Year 2000: 62,463 ratings
+producer-1  | Year 2001: 34,965 ratings
+producer-1  | Year 2002: 28,566 ratings
+producer-1  | Year 2003: 33,871 ratings
+producer-1  | Year 2004: 32,369 ratings
+producer-1  | Year 2005: 56,473 ratings
+producer-1  | Year 2006: 31,758 ratings
+producer-1  | Year 2007: 28,133 ratings
+producer-1  | Year 2008: 32,664 ratings
+producer-1  | Year 2009: 30,369 ratings
+producer-1  | Year 2010: 28,012 ratings
+producer-1  | Year 2011: 23,385 ratings
+producer-1  | Year 2012: 19,697 ratings
+producer-1  | Year 2013: 17,679 ratings
+producer-1  | Year 2014: 17,191 ratings
+producer-1  | Year 2015: 54,450 ratings
+producer-1  | Year 2016: 60,758 ratings
+producer-1  | Year 2017: 57,225 ratings
+producer-1  | Year 2018: 41,440 ratings
+producer-1  | Year 2019: 38,105 ratings
+producer-1  | Year 2020: 48,885 ratings
+producer-1  | Year 2021: 37,864 ratings
+producer-1  | Year 1996: 49,110 ratings
+producer-1  | Year 1997: 23,070 ratings
+producer-1  | Year 1998: 9,714 ratings
+producer-1  | Year 1999: 38,568 ratings
+producer-1  | Year 2000: 62,463 ratings
+producer-1  | Year 2001: 34,965 ratings
+producer-1  | Year 2002: 28,566 ratings
+producer-1  | Year 2003: 33,871 ratings
+producer-1  | Year 2004: 32,369 ratings
+producer-1  | Year 2005: 56,473 ratings
+producer-1  | Year 2006: 31,758 ratings
+producer-1  | Year 2007: 28,133 ratings
+producer-1  | Year 2008: 32,664 ratings
+producer-1  | Year 2009: 30,369 ratings
+producer-1  | Year 2010: 28,012 ratings
+producer-1  | Year 2011: 23,385 ratings
+producer-1  | Year 2012: 19,697 ratings
+producer-1  | Year 2013: 17,679 ratings
+producer-1  | Year 2014: 17,191 ratings
+producer-1  | Year 2015: 54,450 ratings
+producer-1  | Year 2016: 60,758 ratings
+producer-1  | Year 2017: 57,225 ratings
+producer-1  | Year 2018: 41,440 ratings
+producer-1  | Year 2019: 38,105 ratings
+producer-1  | Year 2020: 48,885 ratings
+producer-1  | Year 2021: 37,864 ratings
+producer-1  | Year 2022: 32,440 ratings
+producer-1  | Year 2023: 30,776 ratings
+producer-1  | Sent 1,000,000 ratings (failed=0) in 358.5s (2,789/s)
+producer-1  | Finished sending 1,000,000 ratings (selected=1,000,000).
+producer-1  | [QUALITY] stage=producer in=1,000,000 out=1,000,000 failed=0
+producer-1  | Waiting for an observed hourly stream watermark before late injection...
+producer-1  | Injecting 5 late ratings (event_time -24h)...
+producer-1  | Finished late inject: 5 ratings.

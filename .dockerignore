@@ -1,4 +1,8 @@
+.git
+data
+checkpoints
 *.csv
-*_parquet/
 *.parquet
-__pycache__/ 
+reports
+__pycache__
+recording-runtime

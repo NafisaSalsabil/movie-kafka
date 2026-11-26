@@ -1,0 +1,1 @@
+{"probe": 2, "sent_at_epoch": 1795455056.3780138, "purpose": "Beyond-watermark event after forced consumer restart; expected dropped, source counts unchanged", "row": {"userId": 1, "movieId": 17, "rating": 4.0, "timestamp": 944162676}, "partition": 0, "offset": 1000006}

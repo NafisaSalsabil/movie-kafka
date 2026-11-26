@@ -1,0 +1,9 @@
+ Container movie-reviews-consumer-1 Killing 
+ Container movie-reviews-consumer-1 Killed 
+movie-reviews-consumer-1
+Completed restart 1 total 1000000
+ Container movie-reviews-consumer-1 Killing 
+ Container movie-reviews-consumer-1 Killed 
+movie-reviews-consumer-1
+Completed restart 2 total 1000000
+2 restarts complete; run CSV oracle after catchup.
